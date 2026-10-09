@@ -1,0 +1,12 @@
+DOCUMENT 02 / 10
+Data Sources, Collection and Label Quality
+
+The papers emphasize Twitter-based textual inputs and the challenges of creating a dataset whose labels reflect depression-related communication rather than superficial keywords. In the stacked ensemble paper, two datasets are described: Twitter sentiment data and a depression-detection-using-Twitter-post dataset. The paper describes collecting tweets with the keyword “depression” through the TWINT scraper during a one-day span and storing processed output in a CSV file. Importantly, a tweet containing the term “depression” may quote news, describe someone else, or link to an article; this does not by itself show the author is depressed. The paper notes the need for careful checking.
+
+The DU-POA paper combines the Twitter Sentiment Dataset with Depression Detection using Twitter Data and uses two target classes, class 0 for non-depression and class 1 for depression. Its dataset section states a total of 4,288 text entries, yet also states 2,344 examples in each of two classes (which sum to 4,688). Its training/testing table uses totals of 4,688: 2,812/1,876 at 60% training; 3,281/1,407 at 70%; 3,750/938 at 80%; and 4,219/469 at 90%. These numbers conflict internally in the published text. This corpus records both reports and does not resolve the discrepancy without original data.
+
+The IDCNN–SqueezeNet conference paper likewise describes a TWINT-based source, searching for tweets containing “depression,” manually checking for irrelevant or ambiguous messages, and retaining data in a file named depressive_tweets_processed.csv. Its experimental section describes Python 3.7 and the local processing configuration, but the description should not be interpreted as proof that every example was clinically confirmed.
+
+For corpus users, the difference between sentiment labels, content labels, and verified clinical outcomes is central. Screening for language indicative of depression or suicide risk differs from establishing a diagnosis or predicting behavior for a specific person. Corpus construction and model assessment should track provenance, label definition, class balance, duplicates, scraping criteria, sampling period, and ethical permissions. These are methodological considerations prompted by limitations reported in the papers, not extra verified dataset metadata.
+
+Source coverage: Paper A, Section 7.2; Paper B, Dataset Description and Table 3; Paper C, Section 6.1.

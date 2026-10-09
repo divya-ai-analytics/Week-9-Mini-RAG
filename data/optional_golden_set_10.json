@@ -1,0 +1,137 @@
+{
+  "metadata": {
+    "dataset_name": "Golden_QA_Set_Social_Media_Mental_Health_RAG",
+    "version": "1.1 (10-question subset)",
+    "language": "en",
+    "total_questions": 10,
+    "difficulty_counts": {
+      "easy": 3,
+      "medium": 4,
+      "hard": 3
+    },
+    "purpose": "Reference question-answer set for retrieval-augmented generation evaluation",
+    "source_corpus": "Social_Media_Mental_Health_Research_Corpus_10_Pages.docx; companion 10 text documents",
+    "notes": [
+      "All ground-truth answers refer to the supplied research corpus and original attached papers.",
+      "Source_document_ids correspond to 01–10 text documents in the corpus ZIP.",
+      "Conflicting published numerical values are intentionally preserved with evaluation context.",
+      "Reported classifications are not clinical diagnoses.",
+      "Selected subset of original 30-question golden set; original_id retains provenance."
+    ]
+  },
+  "questions": [
+    {
+      "id": "GQ-001",
+      "difficulty": "easy",
+      "question": "What are the three main stages of the first stacked-ensemble study?",
+      "ground_truth_answer": "Preprocessing, feature extraction, and classification.",
+      "source_document_ids": [
+        "01"
+      ],
+      "question_type": "fact_retrieval",
+      "original_id": "GQ-002"
+    },
+    {
+      "id": "GQ-002",
+      "difficulty": "easy",
+      "question": "Which three feature types are extracted in the DU-POA study?",
+      "ground_truth_answer": "TF-IDF, improved Word2Vec, and style features.",
+      "source_document_ids": [
+        "06"
+      ],
+      "question_type": "fact_retrieval",
+      "original_id": "GQ-005"
+    },
+    {
+      "id": "GQ-003",
+      "difficulty": "easy",
+      "question": "What are the four preprocessing steps in the IDCNN–SqueezeNet study?",
+      "ground_truth_answer": "Remove punctuation, URLs, and stop words; then tokenize the text.",
+      "source_document_ids": [
+        "08"
+      ],
+      "question_type": "fact_retrieval",
+      "original_id": "GQ-007"
+    },
+    {
+      "id": "GQ-004",
+      "difficulty": "medium",
+      "question": "How does preprocessing in the stacked-ensemble study differ from the IDCNN–SqueezeNet study?",
+      "ground_truth_answer": "The stacked-ensemble study specifies stemming and stop-word removal, while IDCNN–SqueezeNet specifies punctuation removal, URL removal, stop-word removal, and tokenization.",
+      "source_document_ids": [
+        "03"
+      ],
+      "question_type": "comparison",
+      "original_id": "GQ-011"
+    },
+    {
+      "id": "GQ-005",
+      "difficulty": "medium",
+      "question": "What role does SASSOA play, and which network does it optimize?",
+      "ground_truth_answer": "SASSOA is a weight-optimization method applied to the ICNN component of the Bi-GRU/Deep Maxout/ICNN ensemble; it is not an independent classifier.",
+      "source_document_ids": [
+        "05"
+      ],
+      "question_type": "explanation",
+      "original_id": "GQ-013"
+    },
+    {
+      "id": "GQ-006",
+      "difficulty": "medium",
+      "question": "Why does the DU-POA study use modified mutual-information-based feature-level fusion?",
+      "ground_truth_answer": "To select or combine informative TF-IDF, improved Word2Vec, and style features, reducing the complication of keeping separate high-dimensional representations before classification.",
+      "source_document_ids": [
+        "06"
+      ],
+      "question_type": "explanation",
+      "original_id": "GQ-014"
+    },
+    {
+      "id": "GQ-007",
+      "difficulty": "medium",
+      "question": "According to the IDCNN–SqueezeNet paper, what is its reported FNR and how does it compare with LSTM?",
+      "ground_truth_answer": "The hybrid FNR is 0.05 versus 0.17 for LSTM in the cited comparison.",
+      "source_document_ids": [
+        "09"
+      ],
+      "question_type": "numerical_comparison",
+      "original_id": "GQ-020"
+    },
+    {
+      "id": "GQ-008",
+      "difficulty": "hard",
+      "question": "The DU-POA paper reports a dataset total of 4,288, yet 2,344 items in each class. Explain the discrepancy and what its train/test table implies.",
+      "ground_truth_answer": "The text is internally inconsistent: 2,344 + 2,344 = 4,688, not 4,288. Its listed train/test partitions (2,812/1,876; 3,281/1,407; 3,750/938; 4,219/469) also each total 4,688. The discrepancy cannot be resolved from the corpus alone and must be flagged, not silently corrected.",
+      "source_document_ids": [
+        "02"
+      ],
+      "question_type": "conflict_detection",
+      "original_id": "GQ-021"
+    },
+    {
+      "id": "GQ-009",
+      "difficulty": "hard",
+      "question": "Compare the feature-extraction approaches across all three studies without conflating feature methods with classifiers.",
+      "ground_truth_answer": "Study A uses n-grams, content, BoVW, LIWC, and improved semantic similarity; Study B uses TF-IDF, improved Word2Vec, and style features, followed by modified mutual-information-based fusion; Study C uses TF-IDF, n-grams, and BoW. These are input representations, not the Bi-GRU/ICNN, DBN/RNN/LSTM, or IDCNN/SqueezeNet classifier networks.",
+      "source_document_ids": [
+        "04",
+        "06",
+        "08"
+      ],
+      "question_type": "multi_document_synthesis",
+      "original_id": "GQ-024"
+    },
+    {
+      "id": "GQ-010",
+      "difficulty": "hard",
+      "question": "Which ethical and scientific constraints would prevent turning the research classifiers directly into individual clinical diagnoses?",
+      "ground_truth_answer": "Social posts are incomplete and ambiguous evidence; labels may be keyword- or sentiment-based rather than clinically verified; model transfer across groups/platforms is uncertain; private posts can be sensitive; and both false alarms and missed signals carry risks. The studies present computational detection, not validated individual diagnoses.",
+      "source_document_ids": [
+        "02",
+        "10"
+      ],
+      "question_type": "critical_reasoning",
+      "original_id": "GQ-029"
+    }
+  ]
+}

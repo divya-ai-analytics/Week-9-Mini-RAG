@@ -1,0 +1,14 @@
+DOCUMENT 03 / 10
+Text Preprocessing and Preparation
+
+Preprocessing standardizes noisy text before extracting quantitative features. The three studies share an interest in removing high-frequency or structurally unhelpful content, but their exact pipelines differ. The stacked ensemble article lists stemming and stop-word removal. Stemming seeks to reduce variants of a word toward a common form, whereas stop-word removal excludes frequently occurring functional terms under a chosen vocabulary rule. The paper discusses under-stemming and over-stemming as possible preprocessing errors.
+
+The DU-POA depression-and-suicide detection paper identifies three main transformations: stop-word removal, tokenization, and stemming. Tokenization separates text into analyzable units such as words or terms. Stemming then reduces certain surface variations of words to a normalized representation. The objective is to facilitate retrieval of TF-IDF, style, and improved Word2Vec features used downstream. The text does not establish that preprocessing alone detects a mental disorder; it prepares features for a classifier.
+
+The IDCNN–SqueezeNet conference study specifies punctuation removal, URL removal, stop-word removal, and tokenization. These operations target artifacts that often arise in short social posts: web links, punctuation sequences, and highly common words. In its documented pipeline, feature extraction follows preprocessing, and the engineered feature vectors enter the hybrid classification system.
+
+These differences matter for reproducibility. Removing punctuation can simplify representations but may also remove intensity signals; stemming can merge distinct expressions; deleting stop words could suppress negation when a word such as “not” is in the stop list. Those are analytical cautions, not additional experimental results established in the attached studies. An implementer should record the exact tokenizer, stop-word inventory, stemmer, and URLs/punctuation rules rather than assume the studies used interchangeable settings.
+
+For retrieval-augmented applications, each stage can become searchable knowledge: the source paper, specific operation, purpose, input/output relationship, and the model that consumes its output. A clean corpus should retain technical terms such as “tokenization,” “stemming,” “stop-word removal,” and “URL removal” so user questions match the published methods.
+
+Source coverage: Paper A, Section 4.1; Paper B, Pre-Processing section; Paper C, Section 3.1.

@@ -1,0 +1,14 @@
+DOCUMENT 01 / 10
+Research Scope and Motivation
+
+The research corpus examines computational detection of mental-health-related signals from text posted to social networking platforms. Its foundation comprises three studies by Divya Agarwal and collaborators: a stacked ensemble for mental health disorder analysis, an ensemble with Dwarf Updated Pelican Optimization for depression and suicide detection, and an Improved Deep Convolutional Neural Network–SqueezeNet hybrid for depression detection. All three treat written social media messages as signals for computational pattern recognition, not as a clinical interview or a verified diagnosis.
+
+The first study describes a three-stage design: preprocessing, feature extraction, and classification. Its proposed classification ensemble combines a Bidirectional Gated Recurrent Unit (Bi-GRU), Deep Maxout, and Improved Convolutional Neural Network (ICNN). A Self-Adaptive Shuffled Shepherd Optimization Algorithm (SASSOA) tunes ICNN weights. The paper emphasizes combining linguistic and semantic features, including Improved Semantic Similarity, n-grams, content features, Bag of Visual Words (BoVW), and Linguistic Inquiry and Word Count (LIWC).
+
+The second study specifically targets depression and suicide-related text. It introduces preprocessing, extraction of TF-IDF, style and improved Word2Vec features, modified mutual-information-based feature fusion, and an ensemble of Deep Belief Network (DBN), Recurrent Neural Network (RNN), and improved Long Short-Term Memory (LSTM). Dwarf Updated Pelican Optimization Algorithm (DU-POA) tunes weights for RNN and improved LSTM components.
+
+The third study targets depression-related tweets with a comparatively direct feature pipeline: punctuation and URL removal, stop-word removal, tokenization, TF-IDF, n-grams, and Bag of Words (BoW). Its hybrid IDCNN–SqueezeNet classifier averages the component outputs. Across the studies, the general research rationale is that patterns of word choice, style, and context may be useful for screening-oriented automated analysis at scale, while limitations in diagnosis, privacy, bias, and generalization remain important.
+
+Corpus scope: These pages are synthesized reference documents derived from the attached papers. They are not a dataset of actual tweets, patient records, manually verified labels, or new experimental findings. Each document is independently readable and can be used as a retrieval chunk in a RAG pipeline.
+
+Source coverage: Paper A, abstract and Sections 1–3; Paper B, abstract and Introduction; Paper C, abstract and Sections 1–3.

@@ -1,0 +1,4 @@
+NOT RUN: live OpenAI and Qdrant keys were not supplied.
+After configuring credentials and running ingest, run:
+python mp2_rag.py validate
+Replace this placeholder with the actual output (not simulated results).

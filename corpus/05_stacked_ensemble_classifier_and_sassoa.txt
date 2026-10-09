@@ -1,0 +1,14 @@
+DOCUMENT 05 / 10
+Stacked Ensemble Classifier and SASSOA
+
+The first journal paper proposes classification by an ensemble composed of Bidirectional Gated Recurrent Unit (Bi-GRU), Deep Maxout, and Improved Convolutional Neural Network (ICNN). The Bi-GRU architecture is designed to process context from both directions in a sequence; Deep Maxout supplies a nonlinear learned representation; and ICNN processes extracted feature patterns with convolutional operations. The paper’s proposed ensemble integrates their classifications for mental health disorder analysis.
+
+To improve the ICNN component, the authors introduce a Self-Adaptive Shuffled Shepherd Optimization Algorithm (SASSOA) as a weight-tuning method. SASSOA optimizes the weights associated with ICNN during training. The main methodological distinction is therefore not simply ensembling multiple networks but coupling one of its learned components with a tailored optimization procedure.
+
+The article benchmarks the proposed EC + SASSOA configuration against alternative optimization methods and other classifiers. In its conclusion, it reports accuracy around 0.93 at 80% learning percentage compared with reported approximate values of 0.88 for EC + AAA, 0.85 for EC + BM, 0.86 for EC + EFO, 0.89 for EC + GA, and 0.81 for EC + SSOA. It also states that at 90% learning percentage EC + SASSOA attains an F-measure around 0.95. Some separate tables report higher or more precise figures for particular conditions; thus, every metric should be tied to the specific experimental comparison rather than merged into a universal score.
+
+The study’s contribution combines preprocessing, heterogeneous linguistic features, ensemble prediction, and optimizer-assisted ICNN learning. It does not establish a clinician-validated screening cutoff or demonstrate that a social media classification is equivalent to formal diagnosis.
+
+A reliable question-answering summary should preserve the distinctions: Bi-GRU/Deep Maxout/ICNN are the constituent models; SASSOA is the optimization algorithm; the target is mental health disorder analysis from social-media text; and the numerical results are experiment-specific reports from the article.
+
+Source coverage: Paper A, Abstract, Sections 5–8 and Conclusion.

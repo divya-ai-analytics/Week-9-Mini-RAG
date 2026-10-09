@@ -1,0 +1,14 @@
+DOCUMENT 07 / 10
+DU-POA Ensemble, Results and Ablation
+
+The SADDSM classifier described in Paper B stacks Deep Belief Network (DBN), Recurrent Neural Network (RNN), and an improved Long Short-Term Memory (LSTM) model. The authors propose Dwarf Updated Pelican Optimization Algorithm (DU-POA) to tune weights of the RNN and improved LSTM. The improved LSTM includes an attention-oriented development described in the article. Its intended value is better generalization and robust detection from social-media text.
+
+Paper B compares its system against LSTM, SVM, Bi-GRU, RNN, CNN, DBN, RNN–LSTM, Random Forest, and DNN classifiers. In its Table 4, the proposed model shows accuracy 0.975229, precision 0.968738, sensitivity 0.966569, F-measure 0.968276, MCC 0.949719, FNR 0.033431, and FPR 0.114327. Those are results associated with the table’s comparison and should not be treated as independently verified deployment outcomes. The abstract separately reports accuracy 0.962 at 90% training data.
+
+The ablation comparison (Table 5) evaluates versions using traditional Word2Vec, removing DU-POA, and conventional fusion. It presents accuracies of 63.25%, 60.82%, and 62.04% respectively, while reporting 96.40% for EC + DU-POA. In the same ablation table, the full method has precision 97.17%, sensitivity 96.98%, F-measure 97.08%, and FNR 3.02%. These values differ from Table 4 because they come from a separately framed analysis, not necessarily the same evaluation condition.
+
+The published results suggest that the authors’ combined representation, modified fusion, stacking, and optimization improve measured detection performance in their specified experiments. The paper also discusses privacy, possible misinterpretation, resource requirements, and broader generalizability as limitations. These cautions matter for any proposed clinical or real-time implementation.
+
+For retrieval, this document answers metric-specific questions only with a reference to its originating table, and keeps accuracy, precision, recall/sensitivity, F-measure, and errors separate.
+
+Source coverage: Paper B, Results and Discussions, Tables 4–5, and Conclusion.

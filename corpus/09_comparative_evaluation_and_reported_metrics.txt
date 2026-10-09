@@ -1,0 +1,14 @@
+DOCUMENT 09 / 10
+Comparative Evaluation and Reported Metrics
+
+The three research papers evaluate classification behavior using overlapping metrics, including accuracy, sensitivity, precision, specificity, false-positive rate (FPR), false-negative rate (FNR), F-measure, Matthews correlation coefficient (MCC), and negative predictive value (NPV). An accurate comparison must keep distinct tasks, datasets, training percentages, baselines, and evaluation tables separate.
+
+In the stacked ensemble paper (Paper A), EC + SASSOA is described as improving against various ensemble optimization alternatives. The conclusion reports approximately 0.93 accuracy at 80% learning percentage and around 0.95 F-measure at 90% learning percentage. The source has other tables for detailed conditions, so these figures are specific highlights rather than a universal summary across every experiment.
+
+In the DU-POA journal paper (Paper B), the abstract states 0.962 accuracy at 90% training data. Table 4 reports 0.975229 accuracy for the proposed model in a conventional-classifier comparison. Table 5 reports 96.40% accuracy in its ablation setting. These three figures should all be retained with their contexts rather than averaged or incorrectly described as the same experiment. Paper B compares the ensemble with models such as SVM, CNN, RNN, DBN, LSTM, Bi-GRU, RF, and DNN.
+
+In the conference paper (Paper C), the IDCNN + SqueezeNet hybrid is compared with SqueezeNet, DCNN, DenseNet, LSTM, and DNN. The text reports a maximal accuracy around 0.94 at 90% learning percentage and an FNR of 0.05 for the hybrid versus 0.10, 0.158, 0.135, 0.17, and 0.136 for the listed comparison models. The statistical accuracy table reports hybrid mean 0.91360, standard deviation 0.0267, median 0.9186, minimum 0.8747, and maximum 0.9424.
+
+These are author-reported, in-study observations; a cross-paper ranking would be scientifically weak without matching data splits, identical labels, evaluation populations, and common validation protocols. High model accuracy is not proof of reliable clinical diagnosis or immediate suitability for real-world risk decisions.
+
+Source coverage: Paper A, Results and Conclusion; Paper B, Abstract and Tables 4–5; Paper C, Sections 6.2–6.3 and Table 1.
